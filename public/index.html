@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <title></title>
+
+        <!-- <script src="angular-route.min.js"></script>
+        <script src="angular.min.js"></script> -->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            .container-float{
+            font-family: -webkit-pictograph;
+            font-weight: 700;
+            color: #ffe007fa;
+            /* background-color: #8080802e; */
+            text-align: center;
+            margin-top: 10px;
+            text-shadow: 0px 2px #FF0000;
+        }
+        /* .mr-2{
+            text-align: center;
+            font-family: fantasy;
+            margin-top: 35px;
+            background-color: #74c2da7a;
+        }
+        .navbar{
+            margin-top: 35px;
+        } */
+        </style>
+    </head>
+    <body  ng-app="myTodolist" ng-controller="myCtrl" class="one">
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <h1 class="container-float">The Other Fruit To_Do_List</h1>
+              </div>
+            </div>
+          </div>
+              <!-- <div class="container">
+                  <div class="row">
+                      <div class="col-md-2">
+                        </nav>
+                      </div>
+                      <div class="col-md-8">
+                        <h3 class="mr-2">My TO-DO List</h3>
+                        <div class="input-group">
+                        <input type="text" id="myInput" class="form-control" placeholder="Task Title..." ng-model='new_task'>
+                        <span class="btn btn-primary"  ng-click='addTask(new_task)'>ADD</span>
+                      </div>
+                      <ul class="mt-4" ng-repeat="todolist in todolists">
+                        <li>{{todolist}}</li>
+                      </ul>
+                      </div>
+                      <div class="col-md-2"></div>
+                  </div>
+              </div> -->
+              <div class="page-content page-container" id="page-content">
+                <div class="padding">
+                    <div class="row container d-flex justify-content-center">
+                      <div class="col-lg-2"></div>
+                        <div class="col-lg-8">
+                            <div class="card px-3">
+                                <div class="card-body">
+                                    <h3 class="card-title">TOF® Todo list</h3>
+                                    <div class="add-items d-flex"> <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?"  ng-model='new_task'> <button class="add btn btn-primary font-weight-bold todo-list-add-btn" ng-click='addTask(new_task)'>Add</button> </div>
+                                    <div class="list-wrapper">
+                                        <ul class="d-flex flex-column-reverse todo-list" ng-repeat="todolist in todolists">
+                                            <li>
+                                                <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox">DSR sent to the company team. <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> Due to some reasone my work is left. <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox">  My work is done. <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> If any issue then put massege on the slack.<i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox">My work in progress.<i class="input-helper"> </i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox"> I was present skype meeting today.<i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                            </li>
+                                            <li>
+                                                <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox">{{todolist.new_task}}<i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+    <script>
+        var app = angular.module("myTodolist", []);
+        app.controller("myCtrl", function($scope,$http) {
+            console.log("I am In controller");
+        $scope.todolists = [" "];
+        //Function for adding task to the task list
+        $scope.addTask = function(todolist) {
+            console.log("work to Add Button");
+            
+            // $scope.todolist.push({
+            //   new_task : $scope.new_task,
+            //         });
+
+            var data= {new_task : $scope.new_task}
+            console.log ("Data Add Sucessfully",$scope.new_task)
+            $http({
+                    method : "POST",
+                    url: "http://localhost:1111/add_todolist",
+                    data : data,
+                    header :{"content-type":"application/json"},
+                })
+                .then(function success(response) {
+                  console.log("Succesfully API Work");
+                 console.log("response=",response);
+                 }, function error(response) {
+              });
+                
+                
+                // .then(function(response){
+                //     console.log("Succesfully api Creation");
+                //     console.log("response=",response);
+                // });
+        
+        //I'm pushing a new task to the task list
+        // $scope.todolists.push({
+        //   todolist: todolist
+        // });
+      };
+        });
+
+    </script>
+</html>
