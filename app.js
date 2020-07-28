@@ -36,7 +36,7 @@ app.post("/add_todolist",function(req,res,next){
 	console.log("--------------addd--------",req.body)
 	var new_task = req.body.new_task
   console.log("new_task=new_task",new_task)
-	db.list.insert({new_task:new_task},function(error,results){
+	db.list.insert({new_task:new_task},function(err,results){
 
 		res.send({status:true,message:"Insert To-do-List Successfully"})
     console.log("results",results);
@@ -47,6 +47,14 @@ app.post("/add_todolist",function(req,res,next){
   }
 	})
 });
+
+//  *********************** fetch user ***********************************
+app.post("/fetch_todolist",function(req,res,next){
+	console.log("++ **************** fetch_todolist****************** ++",req.body);
+	db.list.find({}).toArray(function(erro,results){
+			res.send({status:true,message:"Data Found",data:results})
+	})
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

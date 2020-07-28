@@ -10,59 +10,151 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <title></title>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+
         <!-- <script src="angular-route.min.js"></script>
         <script src="angular.min.js"></script> -->
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
 
         <link rel="stylesheet" href="styles.css">
         <style>
-            .container-float{
+            .two{
             font-family: -webkit-pictograph;
             font-weight: 700;
             color: #ffe007fa;
             /* background-color: #8080802e; */
             text-align: center;
-            margin-top: 10px;
+            /* margin-top: 10px; */
             text-shadow: 0px 2px #FF0000;
         }
-        /* .mr-2{
-            text-align: center;
-            font-family: fantasy;
-            margin-top: 35px;
-            background-color: #74c2da7a;
-        }
-        .navbar{
-            margin-top: 35px;
-        } */
         </style>
     </head>
-    <body  ng-app="myTodolist" ng-controller="myCtrl" class="one">
-        <div class="container-fluid">
+    <body ng-app="myTodolist" ng-controller="myCtrl" class="one">
+        <div class="container-float" style="margin-top: 20px;">
             <div class="row">
-              <div class="col-md-12">
-                <h1 class="container-float">The Other Fruit To_Do_List</h1>
+              <div class="col-md-10">
+                <h1 class="container-float two">The Other Fruit To_Do_List</h1>
               </div>
+
+              <div class="col-md-2 container-float">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#login">Login....</button>
+                  
+                <!-- Modal -->
+                <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="login">Login Page</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                          <form>
+                              <div class="form-group">
+                                <label for="username">UserName:</label>
+                                <input type="email" class="form-control" placeholder="Enter email" id="username" required/>
+                              </div>
+                              <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input type="password" class="form-control" placeholder="Enter password" id="password" required/>
+                              </div>
+                              <div class="form-group form-check">
+                                <label class="checkbox">
+                                  <input class="checkbox" type="checkbox"> Remember me
+                                </label>
+                              </div>
+                              <button type="submit" class="btn btn-primary">Login</button>
+
+                            </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Login</button> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit"data-toggle="modal" data-target="#register" class="btn btn-success">Register</button>
+                <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="register">Register Page</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                     </div>
+                                    <input name="" class="form-control" placeholder="Full name" type="text">
+                                </div> <!-- form-group// -->
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                                     </div>
+                                    <input name="" class="form-control" placeholder="Email address" type="email">
+                                </div> <!-- form-group// -->
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                                    </div>
+                                    <select class="custom-select" style="max-width: 120px;">
+                                        <option selected="">+91</option>
+                                        <option value="1">+92</option>
+                                        <option value="2">+18</option>
+                                        <option value="3">+71</option>
+                                    </select>
+                                    <input name="" class="form-control" placeholder="Phone number" type="text">
+                                </div> <!-- form-group// -->
+                                <!-- <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                                    </div>
+                                    <select class="form-control">
+                                        <option>Select job type</option>
+                                        <option>Web Developer</option>
+                                        <option>Manager</option>
+                                        <option>HR</option>
+                                    </select>
+                                </div>  -->
+                                <!-- form-group end.// -->
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                    <input class="form-control" placeholder="Create password" type="password">
+                                </div> <!-- form-group// -->
+                                <div class="form-group input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                                    </div>
+                                    <input class="form-control" placeholder="Repeat password" type="password">
+                                </div> <!-- form-group// -->                                      
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block"> Create Account  </button>
+                                </div> <!-- form-group// -->      
+                                <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!-- <button type="button" class="btn btn-primary">Login</button> -->
+                        </div>
+                    </div>
+                    </div>
+                </div>
+              </div>
+
             </div>
           </div>
-              <!-- <div class="container">
-                  <div class="row">
-                      <div class="col-md-2">
-                        </nav>
-                      </div>
-                      <div class="col-md-8">
-                        <h3 class="mr-2">My TO-DO List</h3>
-                        <div class="input-group">
-                        <input type="text" id="myInput" class="form-control" placeholder="Task Title..." ng-model='new_task'>
-                        <span class="btn btn-primary"  ng-click='addTask(new_task)'>ADD</span>
-                      </div>
-                      <ul class="mt-4" ng-repeat="todolist in todolists">
-                        <li>{{todolist}}</li>
-                      </ul>
-                      </div>
-                      <div class="col-md-2"></div>
-                  </div>
-              </div> -->
               <div class="page-content page-container" id="page-content">
                 <div class="padding">
                     <div class="row container d-flex justify-content-center">
@@ -72,7 +164,7 @@
                                 <div class="card-body">
                                     <h3 class="card-title">TOF® Todo list</h3>
                                     <div class="add-items d-flex"> <input type="text" class="form-control todo-list-input" placeholder="What do you need to do today?"  ng-model='new_task'> <button class="add btn btn-primary font-weight-bold todo-list-add-btn" ng-click='addTask(new_task)'>Add</button> </div>
-                                    <div class="list-wrapper">
+                                    <!-- <div class="list-wrapper">
                                         <ul class="d-flex flex-column-reverse todo-list" ng-repeat="todolist in todolists">
                                             <li>
                                                 <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox">DSR sent to the company team. <i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
@@ -96,6 +188,24 @@
                                                 <div class="form-check"> <label class="form-check-label"> <input class="checkbox" type="checkbox">{{todolist.new_task}}<i class="input-helper"></i></label> </div> <i class="remove mdi mdi-close-circle-outline"></i>
                                             </li>
                                         </ul>
+                                    </div> -->
+                                    <div class="container">
+                                        <table class="table table-striped table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Todo list</th>
+                                                    <th>Delete</th>
+                                                    <th>Edit</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>    
+                                                <tr  ng-repeat="todolist in todolists">
+                                                    <td><span><input class="checkbox" type="checkbox"></span>{{todolist.new_task}}</td>
+                                                    <td><button class="btn" ng-click="delete_1(id)"><i class="fa fa-trash"></i></button></td>
+                                                    <td><button class="btn" ng-click="edit($index)"><i class="fa fa-pencil-square-o"></i></button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +218,14 @@
         var app = angular.module("myTodolist", []);
         app.controller("myCtrl", function($scope,$http) {
             console.log("I am In controller");
-        $scope.todolists = [" "];
+        $scope.todolists = [
+           { new_task : "I was present skype meeting today."},
+           { new_task : "My work in progress."},
+           { new_task : "If any issue then put massege on the slack."},
+        //    { new_task : "My work is done."},
+        //    { new_task : "Due to some reasone my work is left."},
+        //    { new_task : "DSR sent to the company team."}
+        ];
         //Function for adding task to the task list
         $scope.addTask = function(todolist) {
             console.log("work to Add Button");
@@ -131,7 +248,28 @@
                  }, function error(response) {
               });
                 
-                
+              $scope.fetch_list = function()
+		{
+				$http({
+					url: "http://localhost:1111/fetch_todolist",
+					method : "POST",
+					header :{"content-type":"application/json"},
+					data :{}
+				}).then(function(res){
+					console.log("++++++ fetch_result +++++",res);
+					$scope.new_task = res.new_task
+					// $scope.total_question = response.data.data[0].questions.length
+                    // $scope.show_test  = false
+                    
+
+				},function(error){
+
+				})
+        }
+        
+        $scope.fetch_list()
+
+        
                 // .then(function(response){
                 //     console.log("Succesfully api Creation");
                 //     console.log("response=",response);
@@ -141,7 +279,20 @@
         // $scope.todolists.push({
         //   todolist: todolist
         // });
+        
       };
+            //  $http({
+            //         method : "POST",
+            //         url: "http://localhost:1111/delete_add_todolist",
+            //         data : data,
+            //         header :{"content-type":"application/json"},
+            //     })
+                
+            //     .then(function success(response) {
+            //       console.log("Succesfully API Work");
+            //      console.log("response=",response);
+            //      }, function error(response) {
+            //   });
         });
 
     </script>
