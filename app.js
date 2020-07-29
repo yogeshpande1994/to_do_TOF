@@ -11,7 +11,7 @@ var app = express();
 
 // MongoDB connectivity
 var MongoClient = require('mongodb').MongoClient;
-var mongo=require('mongojs');
+var mongo = require('mongojs');
 var ObjectID=mongo.ObjectID;
 const{ request} = require ("http");
 var db=mongo('localhost:27017/todolist',['list']);
